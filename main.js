@@ -2,8 +2,7 @@ noseX=0;
 noseY=0;
 
 function preload() {
-  clown_nose = loadImage('https://i.postimg.cc/y6M0gkMH/52256603-stock-vector-beautiful-girl-s-lips-simple-style-vector-illustration-removebg-preview.png');
-  clown_band = loadImage('https://i.postimg.cc/Zq85j0gN/total.png');
+  clown_nose = loadImage('https://i.postimg.cc/3J58k60w/total.png');
 }
 
 function setup() {
@@ -26,13 +25,14 @@ function gotPoses(results)
   if(results.length > 0)
   {
     console.log(results);
-    noseX = results[0].pose.nose.x-25;
-    noseY = results[0].pose.nose.y+15;
+    noseX = results[0].pose.nose.x-120;
+    noseY = results[0].pose.nose.y-170;
   }
 }
 
 function draw() {
   image(video, 0, 0, 300, 300);
+  image(clown_nose, noseX, noseY, 250, 250);
 }
 
 function take_snapshot(){    
